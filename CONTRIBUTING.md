@@ -1,34 +1,27 @@
-# Contributing
+# Contributing to Media Manager Pro
 
-Thanks for wanting to improve this project. Humans cooperating is rare, so let's keep it simple.
+First off, thank you for considering contributing to Media Manager Pro! It's people like you that make open source tools great.
 
-## Quick rules
-- Be respectful. No drama.
-- Keep PRs focused (one change-set per PR).
-- If you change UI text, update both EN and TR in `languages.py`.
-- If you add a dependency, explain why and keep optional features optional.
+Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue or assessing your improvements.
 
-## Dev setup
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-# Optional: repair feature
-pip install -r requirements-repair.txt
-python main.py
-```
+## 📋 Table of Contents
 
-## Making a plugin
-Drop a `*.py` file into the `plugins/` folder, define a `Plugin` class, and either:
-- implement `run(main_window)`, or
-- override `get_actions(main_window)` to expose multiple menu actions.
+- [Code of Conduct](#code-of-conduct)
+- [Development Setup](#development-setup)
+- [Project Structure](#project-structure)
+- [Developing Plugins](#developing-plugins)
+- [Submitting Pull Requests](#submitting-pull-requests)
+- [Reporting Bugs](#reporting-bugs)
 
-See `plugins/hello_plugin.py`.
+## Code of Conduct
 
-## Reporting bugs
-Include:
-- what you clicked
-- what you expected
-- what happened instead
-- OS + Python version (if running from source)
-- the relevant part of the log output
+This project and everyone participating in it is governed by the [Media Manager Pro Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+## Development Setup
+
+To set up your local development environment:
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/MediaManagerPro.git](https://github.com/YOUR_USERNAME/MediaManagerPro.git)
+   cd MediaManagerPro
