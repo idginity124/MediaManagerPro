@@ -1,0 +1,5 @@
+-r requirements.txt
+pillow-heif>=0.14
+opencv-python>=4.8
+numpy>=1.24
+scikit-image>=0.21

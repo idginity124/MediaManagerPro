@@ -1,0 +1,4 @@
+# Optional requirements for the "Repair" feature
+opencv-python>=4.8
+numpy>=1.24
+scikit-image>=0.21

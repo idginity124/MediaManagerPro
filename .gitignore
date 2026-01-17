@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+.venv/
+venv/
+.env
+.DS_Store
+
+# PySide/PyInstaller
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Media
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.tiff
+*.heic
