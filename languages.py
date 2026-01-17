@@ -7,7 +7,7 @@ language_signal = LanguageSignal()
 
 LANGUAGES = {
     'TR': {
-        'app_title': 'Media Manager Pro v4.0 - Ultimate Edition',
+        'app_title': 'Media Manager Pro',
         'select_folder': 'Lütfen sol taraftan bir klasör seçin veya sürükleyin...',
         'total': 'TOPLAM',
         'images': 'RESİM',
@@ -149,7 +149,7 @@ LANGUAGES = {
         'conflict_skip': 'Dosya zaten var. Atlanmıştır.',
     },
     'EN': {
-        'app_title': 'Media Manager Pro v4.0 - Ultimate Edition',
+        'app_title': 'Media Manager Pro',
         'select_folder': 'Please select or drag a folder from the left...',
         'total': 'TOTAL',
         'images': 'IMAGES',

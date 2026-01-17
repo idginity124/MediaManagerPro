@@ -1,28 +1,41 @@
 from PySide6.QtWidgets import QMessageBox
 
-from plugin_interface import PluginInterface, PluginAction
 
 
-class Plugin(PluginInterface):
+class Plugin:
     name = "Merhaba Eklentisi"
     version = "1.2"
-    description = "Ekrana basit bir mesaj kutusu çıkarır (örnek eklenti)."
+    description = "Ekrana basit bir mesaj kutusu çıkarır."
 
     def get_actions(self, main_window):
-        # Bir eklenti tek bir aksiyonla sınırlı olmak zorunda değil.
+
+        from dataclasses import dataclass
+        from typing import Optional, Callable, Any
+
+        @dataclass
+        class SimpleAction:
+            text: str
+            callback: Callable
+            shortcut: Optional[str] = None
+            status_tip: Optional[str] = None
+
         return [
-            PluginAction(text="Merhaba de", callback=self.run, icon='fa5s.smile'),
-            PluginAction(
+            SimpleAction(
+                text="Merhaba de", 
+                callback=self.run
+            ),
+            SimpleAction(
                 text="Hakkında",
                 callback=lambda mw: QMessageBox.information(
                     mw,
                     "Merhaba Eklentisi",
-                    "Bu sadece örnek bir eklenti.\n\nKendi eklentilerini 'plugins/' klasörüne koyabilirsin.",
-                ),
-                icon='fa5s.info-circle',
+                    "Bu örnek bir eklentidir.\n'plugins/' klasörüne eklenmiştir."
+                )
             ),
         ]
 
     def run(self, main_window):
-        main_window.log("🔌 Merhaba Eklentisi çalıştırıldı!")
-        QMessageBox.information(main_window, "Plugin", "Merhaba! Ben sonradan eklenen bir kodum :)")
+        if hasattr(main_window, 'log'):
+            main_window.log("🔌 Merhaba Eklentisi çalıştı!")
+            
+        QMessageBox.information(main_window, "Plugin", "Merhaba! Ben eklenti tarafından oluşturuldum.")
