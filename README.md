@@ -2,18 +2,18 @@
   <img src="assets/app_icon.png" alt="Media Manager Pro Logo" width="120" height="120">
 
 # 📁 Media Manager Pro
-### Fast, modern file organizer + duplicate cleaner for Windows (PySide6)
+### The Ultimate File Organizer, Cleaner & Media Tool for Windows
 
   <p>
-    <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    <img src="https://img.shields.io/badge/VERSION-v1.0-2ea44f?style=for-the-badge">
+    <img src="https://img.shields.io/badge/PYTHON-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    <img src="https://img.shields.io/badge/PLATFORM-WINDOWS-0078D6?style=for-the-badge&logo=windows&logoColor=white">
     <img src="https://img.shields.io/badge/GUI-PySide6-41CD52?style=for-the-badge&logo=qt&logoColor=white">
-    <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
-    <img src="https://img.shields.io/badge/Plugins-Supported-6f42c1?style=for-the-badge">
-    <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+    <img src="https://img.shields.io/badge/LICENSE-MIT-yellow?style=for-the-badge">
   </p>
 
   <p>
-    <strong>Media Manager Pro</strong> helps you clean up chaotic folders: organize by date, find duplicates, convert image formats, scrub metadata, and more.
+    <strong>Media Manager Pro</strong> is a powerful desktop utility that helps you clean up chaotic folders: organize by date, find duplicates, convert image formats, scrub metadata, and repair old photos.
     <br>
     Built for normal humans who would rather not spend their weekend renaming files.
   </p>
@@ -21,72 +21,76 @@
   <p>
     <a href="#-download">📥 Download</a> •
     <a href="#-features">✨ Features</a> •
-    <a href="#-plugins">🧩 Plugins</a> •
-    <a href="#-developer-setup">🛠️ Developer Setup</a> •
-    <a href="#-roadmap">🗺️ Roadmap</a>
+    <a href="#-screenshots">📸 Screenshots</a> •
+    <a href="#-developer-setup">🛠️ Developer Setup</a>
   </p>
 </div>
 
 ---
 
-## 🚀 Why this exists
+## 🚀 Why Media Manager Pro?
+
 Because “I’ll sort my photos later” is a lie we all tell ourselves.
 
-- **Fast, practical tools** (no wizardry, no 17-step configs)
-- **Modern desktop UI** (dark/light theme)
-- **Safe file handling** (conflict modes: copy/overwrite/skip)
-- **Extensible** (plugin system)
+- **Fast & Practical** (No wizardry, no 17-step configs)
+- **Modern Desktop UI** (Dark/Light themes)
+- **Safe File Handling** (Conflict modes: Copy/Overwrite/Skip)
+- **Extensible System** (Add your own Plugins)
 
 ---
 
 ## ✨ Features
 
-- **🗂️ Organize by date**
-  - Sort mixed files into folders by **day / month / year**.
+- **🗂️ Smart Organization**
+  Sort mixed files into folders by **Day / Month / Year** automatically.
 
-- **🧹 Duplicate cleaner (optimized)**
-  - Size grouping first, hash only where needed.
+- **🧹 Duplicate Cleaner (Optimized)**
+  Finds and separates identical files using size grouping + hash verification.
 
-- **🖼️ Image converter**
-  - Convert between common formats (JPEG/PNG/WEBP/BMP/TIFF and more).
+- **🧩 Plugin System (New!)**
+  Extend functionality with custom Python scripts. Includes a **Plugin Manager**.
 
-- **🛡️ Privacy mode**
-  - Remove metadata (EXIF) from images.
+- **🔧 Photo Repair (New!)**
+  Restore old or damaged photos using the **Telea Algorithm** (OpenCV).
 
-- **🧩 Plugins**
-  - Add custom tools without touching the core app.
+- **🖼️ Image Converter**
+  Convert between common formats (JPEG, PNG, WEBP, BMP, TIFF, HEIC).
 
-- **🌍 Multi-language**
-  - English + Turkish (and ready for more).
+- **🛡️ Privacy Mode**
+  Strip sensitive metadata (EXIF, GPS, Camera info) from your photos.
+
+- **🌍 Multi-Language**
+  Fully localized interface (English + Turkish).
 
 ---
 
 ## 📥 Download
 
-### Windows
-- Go to **Releases** and download the latest build.
+### Windows (Recommended)
 
-> SmartScreen warning can happen for unsigned apps.
-> “More info → Run anyway” if you trust the source.
+1. Go to **[Releases](../../releases)** page.
+2. Download the latest **MediaManagerPro_v1.0.zip**.
+3. Extract the ZIP file and run **MediaManagerPro.exe**.
+
+> **Note:** Please keep the `plugins` and `assets` folders next to the exe file for everything to work correctly.
+
+> Windows SmartScreen may show a warning.
+> Click **More info → Run anyway**.
 
 ---
 
 ## 📸 Screenshots
 
-| Dashboard | Organize Tab |
+| Dashboard | Plugin Manager |
 |:--:|:--:|
 | <img src="docs/screenshot_dashboard.png" width="100%"> | <img src="docs/screenshot_organize.png" width="100%"> |
 
 ---
 
-## 🧩 Plugins
-Plugins live in the `plugins/` folder.
+🧠 **The Training Arc**
 
-- Each plugin is a single `.py` file.
-- Must expose a `Plugin` class.
-- Can provide one or more menu actions.
-
-Example plugin is included: `plugins/hello_plugin.py`.
+This project is part of my ongoing training arc.
+Built with discipline, refined through mistakes.
 
 ---
 
@@ -97,43 +101,5 @@ git clone <your-repo-url>
 cd MediaManagerPro
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements-full.txt
 python main.py
-```
-
-### Optional: enable the Repair feature
-Repair uses OpenCV + NumPy + scikit-image:
-
-```bash
-pip install -r requirements-repair.txt
-```
-
----
-
-## 🧪 Build (EXE)
-This repo includes a GitHub Actions workflow to build a Windows executable with PyInstaller.
-
-Locally:
-
-```bash
-pip install pyinstaller
-pyinstaller --noconsole --onefile main.py
-```
-
----
-
-## 🗺️ Roadmap
-- Drag-and-drop multi-folder support
-- Safer “dry run” mode before moves
-- Better duplicate detection UI (preview + select)
-- More languages
-
----
-
-## 🤝 Contributing
-PRs welcome. Read **CONTRIBUTING.md**.
-
----
-
-## 📜 License
-MIT. See **LICENSE**.
